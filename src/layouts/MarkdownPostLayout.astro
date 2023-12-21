@@ -10,7 +10,7 @@ const { frontmatter } = Astro.props;
             height: auto;
         }
     </style>
-    <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+    <img transition:animate={fade({duration: '1s'})} src={frontmatter.image.url} alt={frontmatter.image.alt} />
     <div class="tags">
     {frontmatter.tags.map((tag) => (
       <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
